@@ -16,7 +16,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: WritingsList,
+      components: {
+        default: WritingsList,
+        pagination: Pagination
+      },
+      props: {
+        defulat: true,
+        pagination: true
+      }
     },
     {
       path: '/writings',
@@ -35,7 +42,8 @@ export default new Router({
     },
     {
       path: '/writings/:id',
-      component: WritingsDetail
+      name: 'details',
+      component: WritingsDetail,
     },
     {
       path: '/projects',

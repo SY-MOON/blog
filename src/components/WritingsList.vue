@@ -1,14 +1,15 @@
 <template>
   <div id="list">
     <ul>
-      <router-link tag="li" v-for="post in postContents.slice(listStart,listEnd)" :to="{ path: '/writings/' + post.id }" :key="post.id" @click="moveToDetail">
-        <div class="thumb-wrap">
-          <div class="thumb" v-bind:style="'background-image:url('+ post.url + ')'"></div>
-        </div>
-        <h3 class="title">{{ post.title }}</h3>
-      </router-link>
+      <li v-for="(post,index) in postContents.slice(listStart,listEnd)" :key="index">
+        <router-link  :to="{ name: 'details', params: { id: post.id, contents: post } }">
+          <div class="thumb-wrap" >
+            <div class="thumb" v-bind:style="'background-image:url('+ post.url + ')'"></div>
+          </div>
+          <h3 class="title">{{ post.title }}</h3>
+        </router-link>
+      </li>
     </ul>
-
   </div>
 
 </template>
@@ -28,14 +29,13 @@ export default {
       this.listEnd = currentPage * 9;
       this.listStart = this.listEnd - 9;
     });
+
   },
   computed: {
 
   },
   methods: {
-    moveToDetail() {
-      this.$route.params.id = this.$data.id;
-    }
+
   },
 }
 </script>
