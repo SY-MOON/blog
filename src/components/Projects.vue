@@ -1,5 +1,5 @@
 <template>
-  <div id="contents">
+  <div id="post-contents">
     <router-view></router-view>
   </div>
 </template>
@@ -15,5 +15,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

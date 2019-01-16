@@ -24,7 +24,8 @@ import Bookmarks from './Bookmarks.vue'
 export default {
   methods: {
     closeMenu() {
-      this.$EventBus.$emit('close-menu');
+      this.$store.commit('toggleMenu')
+      //this.$EventBus.$emit('close-menu');
     }
   }
 }

@@ -13,6 +13,9 @@ import Contents from './components/Contents.vue'
 import Menu from './components/Menu.vue'
 import Login from './components/admin/Login.vue'
 
+import { mapState } from 'vuex'
+import * as M from './store/mutation-types'
+
 export default {
   name: 'App',
   components: {
@@ -23,22 +26,16 @@ export default {
   },
   data() {
     return {
-      openMenu: false,
-      altFont: false
+      
     }
   },
+  computed: {
+    ...mapState({
+      openMenu: state => state.menu.openMenu,
+      altFont: state => state.font.altFont
+    }),
+  },
   created() {
-    this.$EventBus.$on('open-menu', () => {
-      this.openMenu = !this.openMenu;
-    });
-
-    this.$EventBus.$on('close-menu', () => {
-      this.openMenu = !this.openMenu;
-    });
-
-    this.$EventBus.$on('change-font', () => {
-      this.altFont = !this.altFont;
-    });
   }
 }
 
