@@ -8,9 +8,9 @@
         <router-link tag="li" :to="{ path: '/projects' }">
           <div @click="closeMenu">일<span>Projects</span></div>
         </router-link>
-        <router-link tag="li" :to="{ path: '/bookmarks' }">
+        <!-- <router-link tag="li" :to="{ path: '/bookmarks' }">
           <div @click="closeMenu">갈피<span>Bookmarks</span></div>
-        </router-link>
+        </router-link> -->
       </ul>
     </div>
   </transition>

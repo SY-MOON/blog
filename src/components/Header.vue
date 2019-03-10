@@ -4,7 +4,7 @@
     <div id="logo"><router-link :to="{ path: '/writings' }" ><span>9</span><span>9</span></router-link></div>
     <div id="font-wrap">
       <span class="change-font" @click="toggleFont">
-        <i class="material-icons" :class="" v-if="showFont">cloud_queue</i>
+        <i class="material-icons" v-if="showFont">cloud_queue</i>
         <i class="material-icons" v-else>cloud</i>
       </span>
     </div>

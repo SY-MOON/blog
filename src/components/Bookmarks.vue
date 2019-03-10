@@ -1,7 +1,7 @@
 <template>
   <div id="bookmark-contents">
-    <router-view :bookmark-contents="bookmarks"></router-view>
-    <router-view name="pagination" :total-data="bookmarkCount"></router-view>
+    <router-view></router-view>
+    <router-view name="pagination"></router-view>
   </div>
 </template>
 

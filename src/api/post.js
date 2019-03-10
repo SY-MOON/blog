@@ -16,7 +16,6 @@ function _fetchPost(pageNumber) {
   let startNum = endNum - numPerPage
 
   const r = rawData.slice(startNum, endNum)
-  // console.log('_fetchPost', rawData, startNum, endNum, r)
   return r;
 }
 
@@ -62,7 +61,7 @@ const postAPI = {
   fetchPostById(postId) {
     return new Promise((resolve, reject) => {
 
-      axios.get('http://localhost:5000/sy-blog-29489/us-central1/getPost?pid=' + postId)
+      axios.get('http://sy-blog-29489.firebaseapp.com/getPost?pid=' + postId)
       .then(r=>{
         resolve(r.data)
       })
@@ -75,7 +74,7 @@ const postAPI = {
   post(post) {
     return new Promise((resolve, reject) => {
 
-        axios.post('http://localhost:5000/sy-blog-29489/us-central1/writePost', post)
+        axios.post('http://sy-blog-29489.firebaseapp.com/writePost', post)
         .then(r=>{
             console.log(r.data)
             resolve(r.data)

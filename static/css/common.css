@@ -143,6 +143,7 @@ header > * {
   background-size: cover;
   background-position: center;
   transition: all .5s;
+  background-image: url(../images/pigeon2.png);
 }
 
 .thumb-wrap:hover .thumb,
